@@ -1,0 +1,23 @@
+<div id="box">
+<h1 id="top">Witaj na moim blogu</h1>
+
+<div id="newses">
+<% @posts.each do |post| %>
+    <div class="news">
+	<h2 id="naglowek"><%= link_to post.title, post %></h2>
+	<p id="ago">
+	<%= time_ago_in_words post.created_at %> temu
+	</p>
+    <p>
+	<%= post.text.truncate(250) %>
+	</p>
+	</div>
+<% end %>
+</div>
+	<div id="nav">
+	<p id="new">
+	<%= link_to "Nowy post", new_post_path %>
+	</p>
+	</div>
+
+</div>
